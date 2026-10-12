@@ -1,8 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router";
-import "./App.css";
 import { RouterProvider } from "react-router/dom";
-import EarthMarker from "./examples/EarthMarker/earth-marker";
-import GelatinousCube from "./examples/GelatinousCube/gelatinous-cube";
+import "./App.css";
 
 const router = createBrowserRouter([
     {
@@ -11,13 +9,22 @@ const router = createBrowserRouter([
     },
     {
         path: "/earth-marker",
-        element: <EarthMarker />,
+        lazy: async () => {
+            const { default: Component } =
+                await import("./examples/EarthMarker/earth-marker");
+            return { Component };
+        },
     },
     {
         path: "/gelatinous-cube",
-        element: <GelatinousCube />,
+        lazy: async () => {
+            const { default: Component } =
+                await import("./examples/GelatinousCube/gelatinous-cube");
+            return { Component };
+        },
     },
 ]);
+
 function App() {
     return <RouterProvider router={router} />;
 }

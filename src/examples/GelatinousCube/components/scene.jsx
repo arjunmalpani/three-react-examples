@@ -19,15 +19,15 @@ export default function Scene() {
         roughness: 0,
         thickness: 1,
         ior: 1.5,
-        chromaticAberration: 0.06,
+        chromaticAberration: 0.02,
         anisotropy: 0,
         distortion: 1,
         distortionScale: 0.2,
         temporalDistortion: 0.3,
         clearcoat: 1,
-        attenuationDistance: 0.5,
+        attenuationDistance: 1,
         attenuationColor: "#ffffff",
-        // color: "#BCE954",
+        color: "#c9ffa1",
         bg: "#839681",
     };
     return (
@@ -40,8 +40,7 @@ export default function Scene() {
                     </OozeCube>
                 </Center>
                 <AccumulativeShadows
-                    temporal
-                    frames={100}
+                    frames={40}
                     alphaTest={0.9}
                     color="#525252"
                     colorBlend={1}
@@ -59,8 +58,8 @@ export default function Scene() {
             </group>
             <Environment
                 files={dancingHallEnvironment}
-                background
-                backgroundBlurriness={1}
+                // background
+                // backgroundBlurriness={1}
             />
 
             <OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
