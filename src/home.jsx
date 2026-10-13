@@ -12,6 +12,11 @@ const examples = [
         title: "Earth Marker",
         image: "/thumbnails/earth-marker.png",
     },
+    {
+        path: "/lens-scroll",
+        title: "Lens Scroll",
+        image: "/thumbnails/lens-scroll.png",
+    },
 ];
 
 export default function Home() {

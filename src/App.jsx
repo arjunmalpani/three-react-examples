@@ -27,6 +27,14 @@ const router = createBrowserRouter([
                     return { Component };
                 },
             },
+            {
+                path: "/lens-scroll",
+                lazy: async () => {
+                    const { default: Component } =
+                        await import("./examples/LensScroll/lens-scroll");
+                    return { Component };
+                },
+            },
         ],
     },
 ]);
